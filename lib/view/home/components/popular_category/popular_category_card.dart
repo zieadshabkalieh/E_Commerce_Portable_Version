@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:my_grocery/const.dart';
 import 'package:my_grocery/model/category.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -15,7 +14,7 @@ class PopularCategoryCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10, 10, 5, 10),
       child: CachedNetworkImage(
-        imageUrl: baseUrl + category.image,
+        imageUrl: category.image,
         imageBuilder: (context, imageProvider) =>
             Material(
               elevation: 8,

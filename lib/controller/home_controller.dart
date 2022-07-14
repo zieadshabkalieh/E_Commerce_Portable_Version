@@ -39,6 +39,7 @@ class HomeController extends GetxController {
       var result = await RemoteBannerService().get();
       if (result != null) {
         bannerList.assignAll(adBannerListFromJson(result.body));
+        print("banner= ${adBannerListFromJson(result.body)}");
         _localAdBannerService.assignAllAdBanners(
             adBanners: adBannerListFromJson(result.body));
       }
@@ -56,10 +57,12 @@ class HomeController extends GetxController {
       var result = await RemotePopularCategoryService().get();
       if (result != null) {
         popularCategoryList.assignAll(popularCategoryListFromJson(result.body));
+        print("popular= ${popularCategoryList}");
         _localCategoryService.assignAllPopularCategories(
             popularCategories: popularCategoryListFromJson(result.body));
       }
     } finally {
+      print("special ${popularCategoryList.length}");
       isPopularCategoryLoading(false);
     }
   }

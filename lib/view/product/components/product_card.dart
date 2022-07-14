@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:my_grocery/const.dart';
 import 'package:my_grocery/model/product.dart';
 import 'package:my_grocery/view/product_details/product_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
@@ -36,7 +35,7 @@ class ProductCard extends StatelessWidget {
                   child: Hero(
                     tag: product.images.first,
                     child: CachedNetworkImage(
-                      imageUrl: baseUrl + product.images.first,
+                      imageUrl: product.images.first,
                       placeholder: (context, url) => Shimmer.fromColors(
                         highlightColor: Colors.white,
                         baseColor: Colors.grey.shade300,

@@ -1,20 +1,15 @@
 import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:my_grocery/const.dart';
 import 'package:my_grocery/controller/controllers.dart';
 import 'package:my_grocery/model/category.dart';
 import 'package:shimmer/shimmer.dart';
-
 class CategoryCard extends StatefulWidget {
   final Category category;
   const CategoryCard({Key? key, required this.category}) : super(key: key);
-
   @override
   State<CategoryCard> createState() => _CategoryCardState();
 }
-
 class _CategoryCardState extends State<CategoryCard> {
   bool _selected = false;
   @override
@@ -28,7 +23,7 @@ class _CategoryCardState extends State<CategoryCard> {
           });
         },
         child: CachedNetworkImage(
-          imageUrl: baseUrl + widget.category.image,
+          imageUrl: widget.category.image,
           imageBuilder: (context, imageProvider) => Material(
             elevation: 8,
             shadowColor: Colors.grey.shade300,
